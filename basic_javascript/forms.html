@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css" />
+    <style>
+      input:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+      }
+      input:invalid {
+        outline: 2px solid red;
+        border: none;
+      }
+
+      input:valid {
+        outline: 2px solid green;
+        border: none;
+      }
+    </style>
+    <script>
+      function validateForm() {
+        let fname = document.forms['contactForm']['firstname'].value;
+        let lname = document.forms['contactForm']['lastname'].value;
+
+        if (fname === '') {
+          alert('First name is mandatory!');
+          return false;
+        } else if (lname === '') {
+          alert('Last name is mandatory!');
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <form name="contactForm" action="action.php" onsubmit="return validateForm()">
+        <label>Firstname</label>
+        <input type="text" name="firstname" class="form-control" disabled />
+        <label>Email</label>
+        <input type="email" name="lastname" class="form-control" />
+        <input type="submit" value="Submit" class="btn btn-primary" />
+      </form>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

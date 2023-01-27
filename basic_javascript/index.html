@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- External JS File -->
+    <script src="js/main.js"></script>
+    <script src="js/car.js"></script>
+    <!-- Internal Code for javascript -->
+    <script type="text/javascript">
+      function displayKodeGo() {
+        var x = 10;
+        var y = 12;
+        var sum = x + y;
+
+        document.getElementById('textStyle').style.fontSize = '35px';
+      }
+
+      function forAlert(message) {
+        console.log(message);
+        alert(message);
+      }
+
+      function callCarClass() {
+        var car1 = new Car('Ash', 'TOYOTA', '1.5DualVVTI');
+
+        car1.getInformation();
+
+        var Car2 = {
+          model: 'BMW',
+          color: 'Black',
+          engine: '1.5',
+        };
+        let message = 'hello';
+
+        var car3 = Object.create(Car2);
+
+        var car4 = { model: 'Toyota', color: 'Black', engine: '1.5' };
+
+        console.log(car3.engine);
+
+        for (let x in car4) {
+          console.log('from for in loop:', car4[x]);
+        }
+
+        console.log(JSON.stringify(Car2));
+      }
+    </script>
+  </head>
+  <body onload="callFunction()">
+    <p id="demo" href="test"></p>
+
+    <button onclick="document.getElementById('bulb').src='../image/pic_bulbon.gif'">
+      Turn on the lights
+    </button>
+    <img src="../image/pic_bulboff.gif" alt="Bulb Off" id="bulb" />
+    <button onclick="document.getElementById('bulb').src='../image/pic_bulboff.gif'">
+      Turn off the lights
+    </button>
+
+    <p id="textStyle">Hello Kodego!</p>
+
+    <button onclick="document.getElementById('textStyle').style.display = 'none'">
+      Click this to hide Hello Kodego Font Size
+    </button>
+
+    <button onclick="displayKodeGo()">Click this to show Hello Kodego Font Size</button>
+
+    <p id="textSum">Sum of X & Y</p>
+    <button onclick="sum(10,12)">Click To sum x & y</button>
+
+    <button onclick="forAlert('Hello Kodego!')">Click to Alert Message!</button>
+
+    <br />
+
+    <div id="timeDiv"></div>
+    <button onclick="this.innerHTML = Date()">What time is it?</button>
+    <br />
+
+    <div
+      class="mouseOverEvent"
+      onmouseover="this.style.color='red'"
+      onmouseout="this.style.color='black'"
+    >
+      Hello World!
+    </div>
+
+    <br />
+    <div id="carValue"></div>
+    <button onclick="getArrayCars()">Click to get array of cars</button>
+    <br />
+
+    <button onclick="callCarClass()">Call Car Class</button>
+
+    <script type="text/javascript">
+      document.getElementById('demo').innerHTML = 'Hello World!';
+
+      function getArrayCars() {
+        var cars = ['Toyota', 'Nissan', 'Mitsubishi', 'Kia', 'BMW', 'Mazda'];
+
+        let x = 12;
+
+        let obj = {};
+
+        // for (var i = 0; i < cars.length; i++) {
+        //   alert(cars[i]);
+        // }
+
+        console.log('getArrayCars');
+        document.getElementById('carValue').innerHTML = cars[5];
+
+        var objectPerson = {
+          firstName: 'Kodego',
+          lastName: 'Bootcamp',
+          age: 2,
+          address: 'Makati City',
+          gender: 'Others',
+          hobies: ['basketball', 'volleyball'],
+          senior: false,
+        };
+
+        console.log('The first name of the person is:', objectPerson.firstName);
+        console.log('The last name of the person is:', objectPerson.lastName);
+        console.log('Is senior:', objectPerson.senior);
+      }
+
+      function callFunction() {
+        //var message = 'Page is loaded';
+        //console.log(document.body);
+        console.log('Page is loaded!');
+
+        var objectPerson = {
+          firstName: 'Kodego',
+          lastName: 'Bootcamp',
+          age: 2,
+          address: 'Makati City',
+          gender: 'Others',
+          hobies: ['basketball', 'volleyball'],
+          senior: false,
+        };
+
+        const myObj = Object.values(objectPerson);
+        console.log('myObj', myObj);
+        console.log('stringify', JSON.stringify(objectPerson));
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css" />
+    <script src="js/person.js"></script>
+    <script>
+      function getAllUsers() {
+        var apiUsersResponse = [
+          {
+            id: '123',
+            name: 'Abner Nercua',
+            address: 'Pembo',
+            city: 'Makati',
+            zip_code: Math.random(),
+          },
+          {
+            id: '456',
+            name: 'Custer Galas',
+            address: 'Nangka',
+            city: 'Marikina',
+            zip_code: Math.random(),
+          },
+          {
+            id: '789',
+            name: 'Cyan Millam',
+            address: 'Sauyo',
+            city: 'Quezon City',
+            zip_code: Math.random(),
+          },
+          {
+            id: '012',
+            name: 'Jay Liu',
+            address: 'Tondo',
+            city: 'Manila',
+            zip_code: Math.random(),
+          },
+          {
+            id: '345',
+            name: 'Sharon Pepino',
+            address: 'BF Homes',
+            city: 'Paranaque',
+            zip_code: Math.random(),
+          },
+        ];
+        //ito ung pang select ng tbody
+        let tbody = document.getElementsByTagName('tbody')[0];
+        let tr = '';
+
+        for (var i = 0; i < apiUsersResponse.length; i++) {
+          tr +=
+            '<tr>' +
+            '<td>' +
+            apiUsersResponse[i].id +
+            '</td>' +
+            '<td>' +
+            apiUsersResponse[i].name +
+            '</td>' +
+            '<td>' +
+            apiUsersResponse[i].address +
+            '</td>' +
+            '<td>' +
+            apiUsersResponse[i].city +
+            '</td>' +
+            '<td>' +
+            apiUsersResponse[i].zip_code +
+            '</td>' +
+            '</tr>';
+          //tbody.appendChild(tr);
+        }
+
+        tbody.innerHTML = tr;
+      }
+
+      function appendChildUsers() {
+        var apiUsersResponse = [
+          {
+            id: '123',
+            name: 'Abner Nercua',
+            address: 'Pembo',
+            city: 'Makati',
+            zip_code: Math.random(),
+          },
+          {
+            id: '456',
+            name: 'Custer Galas',
+            address: 'Nangka',
+            city: 'Marikina',
+            zip_code: Math.random(),
+          },
+          {
+            id: '789',
+            name: 'Cyan Millam',
+            address: 'Sauyo',
+            city: 'Quezon City',
+            zip_code: Math.random(),
+          },
+          {
+            id: '012',
+            name: 'Jay Liu',
+            address: 'Tondo',
+            city: 'Manila',
+            zip_code: Math.random(),
+          },
+          {
+            id: '345',
+            name: 'Sharon Pepino',
+            address: 'BF Homes',
+            city: 'Paranaque',
+            zip_code: Math.random(),
+          },
+        ];
+
+        let tbody = document.getElementsByTagName('tbody')[0];
+        for (var i = 0; i < apiUsersResponse.length; i++) {
+          const nodeTr = document.createElement('tr');
+          const nodeTd = document.createElement('td');
+          const nodeTd2 = document.createElement('td');
+          const idNode = document.createTextNode(apiUsersResponse[i].id);
+          const nameNode = document.createTextNode(apiUsersResponse[i].name);
+          nodeTd.appendChild(idNode);
+          nodeTd2.appendChild(nameNode);
+          nodeTr.appendChild(nodeTd);
+          nodeTr.appendChild(nodeTd2);
+          tbody.appendChild(nodeTr);
+        }
+      }
+
+      function callName() {
+        var p = new Person('Jerum', 'Galang', 25, 'Sauyo');
+        console.log(p.fullName());
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <button class="btn btn-primary" onclick="appendChildUsers()">Call Name</button>
+      <button class="btn btn-primary" onclick="getAllUsers()">Users Page</button>
+      <table class="table">
+        <thead>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Zip Code</th>
+        </thead>
+        <tbody id="usersTbody"></tbody>
+      </table>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
