@@ -1,5 +1,6 @@
 import './App.css';
-import Todos from './components/Todos';
+import ReactMemo from './components/memo/ReactMemo';
+import ReactStyle from './components/styleReact/ReactStyle';
 
 function App() {
   return (
@@ -12,8 +13,13 @@ function App() {
       <StateFunctionExample /> */}
       {/* <ComponentLifeCycle />
       <FunctionLifeCycle /> */}
-
+      {/* 
       <Todos />
+      <ReactFormEvent /> */}
+
+      {/* <Routing /> */}
+      <ReactMemo />
+      <ReactStyle />
     </div>
   );
 }
