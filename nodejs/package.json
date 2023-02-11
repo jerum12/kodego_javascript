@@ -1,0 +1,19 @@
+{
+  "name": "first_node_js_app",
+  "version": "1.0.0",
+  "description": "First Node JS Application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start_node": "nodemon server.js"
+  },
+  "author": "Jerum",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
